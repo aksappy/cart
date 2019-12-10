@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cart_db
+    platform: postgres
+    driver-class-name: org.postgresql.Driver  jpa:    hibernate:      ddl-auto : update
+logging:  level:
+    root: ERROR    ak.cart: DEBUG
+    

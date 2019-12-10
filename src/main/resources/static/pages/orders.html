@@ -1,0 +1,15 @@
+<div class="row">
+	<div class="col-lg-12">
+		Dear User, the following order has been placed. Your order id is <strong>{{orderId}}</strong>
+	</div>
+	<div class="col-lg-12 mb-6">Here is the summary of what you have
+		ordered. <span ng-show="email">We have also sent the confirmation email to {{email}}.</span></div>
+	<div class="card col-lg-3 product-card" ng-repeat="item in items">
+		<img src="images/{{item.id}}.png"
+			height="100" width="100">
+		<div class="card-body">
+			<h5 class="card-title">{{item.count}} number(s) of {{item.name}}</h5>
+			<p class="card-text">{{item.shortDescription}}</p>
+		</div>
+	</div>
+</div>

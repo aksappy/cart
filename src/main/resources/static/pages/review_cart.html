@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="col-lg-12">
+		<h3>Review Your Selected Products</h3>
+	</div>
+	<div class="col-lg-12">
+		<table ng-show="itemsInCart.length > 0">
+			<tr ng-repeat="(index,item) in itemsInCart">
+				<td><img src="images/{{item.id}}.png" height="100" width="100" /></td>
+				<td col="3">{{item.name}}</td>
+				<td><input type="number" class="form-control"
+					ng-model="item.count" ng-change="onChange(index)" /></td>
+				<td><button class="btn btn-sm btn-danger" ng-click="removeItem(index)">Remove</button></td>
+				<td ng-show="item.updated"><button class="btn btn-sm btn-success"
+						 ng-click="updateItem(index)">Update</button></td>
+				
+			</tr>
+		</table>
+	</div>
+
+	<strong ng-show="!itemsInCart.length || itemsInCart.length === 0">We
+		couldn't find any selected products!</strong>
+	<div class="col-lg-12 mb-3 mt-3" ng-hide="!itemsInCart.length || itemsInCart.length === 0">
+		Total Amount - <b>{{totalPrice}} CAD</b>
+	</div>
+	<div class="col-lg-12">
+		<button type="button" class="btn btn-primary btn-lg btn-block"
+			ng-show="itemsInCart.length > 0" ng-click="submitOrder()">Order</button>
+	</div>
+</div>
